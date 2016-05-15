@@ -35,8 +35,8 @@ public class Departamento {
 	private Calendar dataInclusao;
 	
 	@OneToMany(fetch=FetchType.LAZY,mappedBy="departamento")
-	List<Funcionario> funcionarios;
-
+	private List<Funcionario> funcionarios;
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;

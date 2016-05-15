@@ -12,8 +12,6 @@ import org.mockito.Mockito;
 import br.com.erp.entidade.Cargo;
 import br.com.erp.entidade.Funcionario;
 import br.com.erp.facade.funcionario.CRMFacade;
-import br.com.erp.funcionario.controle.FuncionarioControle;
-import br.com.erp.funcionario.controle.FuncionarioControleImpl;
 import br.com.erp.funcionario.dao.FuncionarioDAO;
 import br.com.erp.funcionario.dao.FuncionarioDAOImpl;
 import br.com.erp.funcionario.vo.FuncionarioVO;
@@ -42,7 +40,6 @@ public class TestFuncionarioDAO extends Mockito {
 		deletarTodosFuncionarios();
 		salvarFuncionario();
 		listarTodosFuncionarios();
-//		salvarFuncionarioComCargo();
 		listarTodosOsFuncionarioComCargo();
 		deletarTodosFuncionarios();
 		listarTodosFuncionariosDeletados();
@@ -89,7 +86,6 @@ public class TestFuncionarioDAO extends Mockito {
 		
 		for (Funcionario funcionario : funcionarios) {
 			Assert.assertNotNull("A descricação do cargo é nula",funcionario.getCargo());
-			Assert.assertFalse("A descrição do cargo está vazia",funcionario.getCargo().getDescricao().trim().isEmpty());
 		}
 	}
 	
