@@ -9,7 +9,6 @@
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
 		<class>br.com.erp.entidade.Funcionario</class>
 		<class>br.com.erp.entidade.Cargo</class>
-		<class>br.com.erp.entidade.Departamento</class>
 		<properties>
 			<property name="hibernate.archive.autodetection" value="class, hbm"/>
 			<property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver" />

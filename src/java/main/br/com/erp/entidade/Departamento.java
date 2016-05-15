@@ -34,7 +34,7 @@ public class Departamento {
 	@Column(name="data_inclusao")
 	private Calendar dataInclusao;
 	
-	@OneToMany(fetch=FetchType.LAZY)
+	@OneToMany(fetch=FetchType.LAZY,mappedBy="departamento")
 	List<Funcionario> funcionarios;
 
 	@Override
