@@ -24,6 +24,14 @@ public class Funcionario {
 	@GeneratedValue(generator="funcionario_seq",strategy=GenerationType.AUTO)
 	private Long id;
 	
+	@ManyToOne(fetch=FetchType.EAGER)
+	@JoinColumn(name="id_cargo")
+	private Cargo cargo;
+	
+	@ManyToOne(fetch=FetchType.LAZY)
+	@JoinColumn(name="id_departamento")
+	private Departamento departamento;
+	
 	@Column(name="nome")
 	private String nome;
 	
@@ -33,6 +41,15 @@ public class Funcionario {
 	@Column(name="numero_nis")
 	private String numeroNis;
 	
+	@Column(name="numero_cpts")
+	private Integer numeroCPTS;
+	
+	@Column(name="serie_cpts")
+	private Integer serieCTPS;
+	
+	@Temporal(TemporalType.DATE)
+	@Column(name="data_emissao_ctps")
+	private Calendar dataEmissaoCTPS;
 	
 	@Column(name="data_nascimento")
 	@Temporal(TemporalType.DATE)
@@ -45,10 +62,6 @@ public class Funcionario {
 	@Column(name="data_demissao")
 	@Temporal(TemporalType.DATE)
 	private Calendar dataDemissao;
-	
-	@ManyToOne(fetch=FetchType.EAGER)
-	@JoinColumn(name="cargo")
-	private Cargo cargo;
 	
 	@Override
 	public int hashCode() {
@@ -179,6 +192,30 @@ public class Funcionario {
 
 	public void setCargo(Cargo cargo) {
 		this.cargo = cargo;
+	}
+
+	public Integer getNumeroCPTS() {
+		return numeroCPTS;
+	}
+
+	public void setNumeroCPTS(Integer numeroCPTS) {
+		this.numeroCPTS = numeroCPTS;
+	}
+
+	public Integer getSerieCTPS() {
+		return serieCTPS;
+	}
+
+	public void setSerieCTPS(Integer serieCTPS) {
+		this.serieCTPS = serieCTPS;
+	}
+
+	public Calendar getDataEmissaoCTPS() {
+		return dataEmissaoCTPS;
+	}
+
+	public void setDataEmissaoCTPS(Calendar dataEmissaoCTPS) {
+		this.dataEmissaoCTPS = dataEmissaoCTPS;
 	}
 	
 	
